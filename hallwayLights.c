@@ -6,7 +6,6 @@
 	- prompt for a number of lightbulbs and store as numBulbs
 	- create bool array with numBulbs elements set to off
 	- print bulbs
-	- prompt for "press go"
 	- loop cntr with numBulbsPasses w/ nested numBulbs cntr to flip elements
 	- print after each loop
 	- print element numbers left on
@@ -76,6 +75,13 @@ void printHallway(bool hallwayBulbs[], int bulbs) {
 			if (flipCount % runCount == 0) {
 			hallwayBulbs[flipCount] = !hallwayBulbs[flipCount];	
 			}	
+		}
+	}
+	printf("\n");
+	printf("Bulbs left on: ");
+	for (int i = 0; i < bulbs; i++) {
+		if (hallwayBulbs[i] == true) {
+			printf("%d ", i);
 		}
 	}
 	printf("\n");

@@ -58,6 +58,7 @@ int promptPosInt() {
 
 void printHallway(bool hallwayBulbs[], int bulbs) {
 	printf("\n");
+
 	// using bulbs + 1 to prevent 'Floating Point Exception' error
 	for (int runCount = 1; runCount < bulbs + 1; runCount++) {
 
@@ -67,6 +68,14 @@ void printHallway(bool hallwayBulbs[], int bulbs) {
 		}
 		// space between runs
 		printf("\n");
+
+		// print all bulbs to test
+		for (int i = 0; i < bulbs; i++)
+		{
+			printf("%d ", hallwayBulbs[i]);
+		}
+		// space between runs
+		printf("\n\n");
 
 		// when runCount is 5 zB. if the flipCount is divisible by runCount, flip value
 		// using bulbs + 1 to prevent 'Floating Point Exception' error
@@ -78,12 +87,24 @@ void printHallway(bool hallwayBulbs[], int bulbs) {
 		}
 	}
 	printf("\n");
+
+	// print all bulbs to test
+	for (int i = 0; i < bulbs; i++)
+	{
+		printf("%d ", hallwayBulbs[i]);
+	}
+
+	// space between runs
+	printf("\n");
+
+	// print list of bulbs left on
 	printf("Bulbs left on: ");
 	for (int i = 0; i < bulbs; i++) {
 		if (hallwayBulbs[i] == true) {
 			printf("%d ", i);
 		}
 	}
-	printf("\n");
+	printf("\nWhy the extra flip on element zero???\n");
+	printf("\n\n");
 	return;
 }

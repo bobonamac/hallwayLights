@@ -60,38 +60,36 @@ void printHallway(bool hallwayBulbs[], int bulbs) {
 	printf("\n");
 
 	// using bulbs + 1 to prevent 'Floating Point Exception' error
-	for (int runCount = 1; runCount < bulbs + 1; runCount++) {
+	for (int everyNthChain = 0; everyNthChain < bulbs; everyNthChain++) {
 
 		// print each of the elements
-		for (int elementCount = 0; elementCount < bulbs; elementCount++) {
-			printf("%s ", hallwayBulbs[elementCount] ? "o" : "_");
+		for (int printElementCounter = 0; printElementCounter < bulbs; printElementCounter++) {
+			printf("%s ", hallwayBulbs[printElementCounter] ? "o" : "_");
 		}
 		// space between runs
-		printf("\n");
+		printf("\nline 70\n");
 
-		// print all bulbs to test
+		// print all bulb elements to test
 		for (int i = 0; i < bulbs; i++)
 		{
 			printf("%d ", hallwayBulbs[i]);
 		}
 		// space between runs
-		printf("\n\n");
+		printf("\nline 78\n");
 
-		// when runCount is 5 zB. if the flipCount is divisible by runCount, flip value
+		// when everyNthChain is 5 zB. if the bulbSwitchCounter is divisible by everyNthChain, flip value
 		// using bulbs + 1 to prevent 'Floating Point Exception' error
 		// flip all the appropriate switches
-		for (int flipCount = 0; flipCount < bulbs; flipCount++) {
-			if (flipCount % runCount == 0) {
-			hallwayBulbs[flipCount] = !hallwayBulbs[flipCount];	
-			}	
+		for (int bulbSwitchCounter = everyNthChain; bulbSwitchCounter < bulbs; bulbSwitchCounter += everyNthChain) {
+			hallwayBulbs[bulbSwitchCounter] = !hallwayBulbs[bulbSwitchCounter];		
 		}
 	}
-	printf("\n");
+	printf("\nLine 87\n");
 
 	// print all bulbs to test
 	for (int i = 0; i < bulbs; i++)
 	{
-		printf("%d ", hallwayBulbs[i]);
+		printf("line 92\n%d ", hallwayBulbs[i]);
 	}
 
 	// space between runs

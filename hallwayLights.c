@@ -18,10 +18,11 @@ int main(void) {
 	{
 		hallwayBulbs[i] = false;
 	}
-	
+	printf("\n");
+
 	// print the hallway with all the lights off
-	for (int printElementCounter = 0; printElementCounter < bulbs; printElementCounter++) {
-		printf("%s ", hallwayBulbs[printElementCounter] ? "o" : "_");
+	for (int j = 0; j < bulbs; j++) {
+		printf("%s ", hallwayBulbs[j] ? "o" : "_");
 	}
 	printf("\n");
 	// execute the chain pulls, print, and list bulbs left on
@@ -47,32 +48,32 @@ int promptPosInt() {
 
 void flipAndPrint(bool hallwayBulbs[], int bulbs) {
 	printf("\n");
-
+	// do this bulb number of times
 	for (int everyNthChain = 1; everyNthChain < bulbs + 1; everyNthChain++) {
 
-		// flip all the appropriate switches
-		for (int bulbSwitchCounter = everyNthChain; bulbSwitchCounter <  bulbs + 1; bulbSwitchCounter += everyNthChain) {
-			hallwayBulbs[bulbSwitchCounter - 1] = !hallwayBulbs[bulbSwitchCounter - 1];	
+		// start with Nth chain and increment by the same till bulbs is reached
+		for (int i = everyNthChain; i <  bulbs + 1; i += everyNthChain) {
+			hallwayBulbs[i - 1] = !hallwayBulbs[i - 1];	
 		}	
 		// print each of the elements
-		for (int printElementCounter = 0; printElementCounter < bulbs; printElementCounter++) {
-			printf("%s ", hallwayBulbs[printElementCounter] ? "o" : "_");
+		for (int j = 0; j < bulbs; j++) {
+			printf("%s ", hallwayBulbs[j] ? "o" : "_");
 		}
 		// space between runs
 		printf("\n\n");
 	}
 	// print list of bulbs left on
 	printf("Bulbs left on: ");
-	for (int i = 0; i < bulbs; i++) {
-		if (hallwayBulbs[i] == true) {
-			printf("%d", i + 1);	
+	for (int k = 0; k < bulbs; k++) {
+		if (hallwayBulbs[k] == true) {
+			printf("%d", k + 1);	
 		}
-		if (i != bulbs - 1 && hallwayBulbs[i] == true) {
+		if (k != bulbs - 1 && hallwayBulbs[k] == true) {
 				printf(", ");
 		}
 	}
 
-	printf("\n\n");
+	printf("\n\n\n");
 
 	return;
 }
